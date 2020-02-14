@@ -12,5 +12,10 @@ app.use('/user', require('./routes/userRoutes'));
 app.use('/role', require('./routes/roleRoutes'));
 app.use('/userRole', require('./routes/userRoleRoutes'));
 
+//passport require and initialize
+const passport = require("passport")
+app.use(passport.initialize())
+require("./config/passport")(passport) 
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, console.log(`Server started on port ${PORT}`));
