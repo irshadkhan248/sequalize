@@ -4,7 +4,6 @@ const role = require("./Role");
 const user = require("./User");
 
 const UserRole = db.define("userRole", {
-
 	role_id: {
 		type: Sequelize.INTEGER,
 		allowNull: true,

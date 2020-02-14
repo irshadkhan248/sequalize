@@ -64,17 +64,17 @@ router.delete("/delete", (req, res) => {
 //search using pagination
 router.get("/pagination", async (req, res) => {
 	console.log(req.body);
-	var page = Number(req.body.page)
-	pageno = page > 0 ? page : pageno
-	var limit = Number(req.body.limit)
-	limitno = limit > 0 ? limit : limitno
-	var skip = (pageno * limitno - limitno)
+	var page = Number(req.body.page);
+	pageno = page > 0 ? page : pageno;
+	var limit = Number(req.body.limit);
+	limitno = limit > 0 ? limit : limitno;
+	var skip = pageno * limitno - limitno;
 	const { count, rows } = await Role.findAndCountAll({
 		offset: skip,
-		limit: limitno
+		limit: limitno,
 	});
 	console.log(count);
-	res.send({ Role:rows,totalEntries:count});
+	res.send({ Role: rows, totalEntries: count });
 });
 
 module.exports = router;

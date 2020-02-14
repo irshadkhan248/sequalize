@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-module.exports = new Sequelize("FinancialAppSchema", 'root', 'Yahoo@123', {
+module.exports = new Sequelize("FinancialAppSchema", "root", "Yahoo@123", {
 	host: "localhost",
 	dialect: "mysql",
 	logging: function() {},
@@ -10,7 +10,7 @@ module.exports = new Sequelize("FinancialAppSchema", 'root', 'Yahoo@123', {
 	},
 });
 
-// sequelize. 
+// sequelize.
 // 	authenticate()
 // 	.then(() => {
 // 		console.log("Connection established successfully.");

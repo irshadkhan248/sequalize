@@ -30,7 +30,7 @@ module.exports = function(passport) {
 								message: "Incorrect Password.",
 							});
 						}
-						return done(null, user);
+						return done(null, user,{message:"successfully login"});
 					})
 					.catch(err => console.log("err:::::", err));
 			},
