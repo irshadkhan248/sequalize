@@ -24,7 +24,7 @@ const User = db.define("user", {
 		default: null,
 	},
 	contact: {
-		type: Sequelize.INTEGER,
+		type: Sequelize.BLOB('tiny'),
 		allowNull: true,
 		default: null,
 	},
@@ -61,17 +61,17 @@ const User = db.define("user", {
 	},
 	referrer: {
 		type: Sequelize.STRING,
-		notNull: true,
+		allowNull: true,
 		default: null,
 	},
 	createdBy: {
 		type: Sequelize.STRING,
-		notNull: true,
+		allowNull: false, 
 		default: null,
 	},
 	updatedBy: {
 		type: Sequelize.STRING,
-		notNull: true,
+		allowNull: false,
 		default: null,
 	},
 });
