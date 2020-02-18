@@ -56,10 +56,10 @@ router.post("/update", (req, res) => {
 
 //delete a record using id in query
 router.delete("/delete", (req, res) => {
-	console.log("reqQuery::::", req.query);
 	let term = req.query.id;
+	console.log("reqQuery::::", term);
 	User.destroy({ where: { id: term } })
-		.then(users => res.status(200).send(users))
+		.then(users => res.sendStatus(200).send(users))
 		.catch(err => console.log(err));
 });
 
