@@ -3,13 +3,13 @@ const db = require("../config/database");
 
 const User = db.define("user", {
 	id: {
-		type: Sequelize.INTEGER,
+		type: Sequelize.BIGINT,
 		allowNull: false,
 		primaryKey: true,
 		autoIncrement: true,
 	},
 	version: {
-		type: Sequelize.INTEGER,
+		type: Sequelize.BIGINT,
 		allowNull: false,
 		default: null,
 	},

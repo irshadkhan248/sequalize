@@ -81,6 +81,8 @@ router.get("/pagination", async (req, res) => {
 
 //Login
 router.post("/login", (req, res, next) => {
+	console.log("req.body=", req.body);
+
 	passport.authenticate("local", function(err, user, info) {
 		// console.log("err::", err, "\n", "user::", user, "\ninfo:::", info);
 
